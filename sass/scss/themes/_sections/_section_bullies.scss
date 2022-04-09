@@ -1,0 +1,130 @@
+.bullies-section {
+  height: 200rem;
+  position: relative;
+  background-color: #050505c5;
+
+  &::before {
+    content: "";
+    @include keep-it-hundo;
+    @include absol-topLeftZero;
+    background-image: url(../public/images/ssserpentsandbulliesfinal.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-attachment: fixed;
+    filter: drop-shadow(0.3rem 0.3rem 0.3rem #050505db);
+    -webkit-filter: drop-shadow(0.3rem 0.3rem 0.3rem #050505db);
+    z-index: -1;
+  }
+
+  &::after {
+    content: "";
+    @include keep-it-hundo;
+    @include absol-topLeftZero;
+    background-image: url(../public/images/bangsal-nam-9HMGyZJfrk8-unsplash.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    z-index: -2;
+  }
+
+  .bullies-wrapper {
+    width: 100%;
+    height: calc(100% - 10rem);
+    @include flex-center-col;
+
+    .bullies-container {
+      width: 90%;
+      height: calc(100% / 2);
+      @include flex-center-col;
+      border: 1px solid blue;
+
+      .bullies-boxes {
+        width: 20rem;
+        height: 30rem;
+        background-color: #050505ba;
+        @include flex-center-col;
+
+        &:not(:last-child) {
+          margin-bottom: 2rem;
+        }
+
+        .bullies-content {
+          width: 100%;
+          //   border: 1px solid blue;
+        }
+
+        .bullies-content-headshot {
+          height: 55%;
+          //   margin-top: 1rem;
+          position: relative;
+          //   border: 1px solid red;
+
+          .headshot-box {
+            width: 13rem;
+            height: 13rem;
+            position: relative;
+            @include absol-center;
+            top: 55%;
+            overflow: hidden;
+            border: 0.2rem solid $color-lite;
+            border-radius: 40rem;
+            -webkit-border-radius: 40rem;
+            -moz-border-radius: 40rem;
+            -ms-border-radius: 40rem;
+            -o-border-radius: 40rem;
+
+            &::after {
+              content: "";
+              @include keep-it-hundo;
+              @include absol-center;
+              background-image: url(../public/images/TransparentGrimm.png);
+              background-position: -15px 5px;
+              background-size: cover;
+              background-repeat: no-repeat;
+            }
+          }
+        }
+
+        .bullies-content-info {
+          height: 45%;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+
+          .bullies-content-info-name {
+            width: 100%;
+            margin-bottom: 1rem;
+            font-size: 3.5rem;
+            color: $color-lite;
+            @include flex-center;
+          }
+
+          .bullies-content-info-stats {
+            width: 100%;
+            @include flex-center-col;
+
+            li {
+              width: 60%;
+              margin-bottom: 1rem;
+
+              color: $color-lite;
+              font-size: 1.25rem;
+              display: flex;
+              justify-content: flex-start;
+              align-items: center;
+
+              img {
+                width: 1.8rem;
+                height: 1.8rem;
+                margin-right: 1rem;
+                object-fit: contain;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

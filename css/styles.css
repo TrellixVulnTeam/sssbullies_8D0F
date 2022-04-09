@@ -67,6 +67,7 @@ body {
         height: 95%; } }
     .hero .logo-btn-container .company-main-logo {
       width: 100%;
+      max-width: 80rem;
       height: auto;
       margin-bottom: 2rem;
       filter: drop-shadow(0.2rem 0.2rem 0.3rem #050505ce);
@@ -197,6 +198,7 @@ body {
         display: none; } }
   .nav-main .nav-ul {
     width: 100%;
+    max-width: 90rem;
     height: 60%;
     margin-top: 5rem;
     display: flex;
@@ -266,33 +268,49 @@ body {
   -ms-transform: translateX(100vw);
   -o-transform: translateX(100vw); }
 
+.about-section {
+  height: 50rem; }
+
 .breeding-section {
   height: 75rem; }
   @media only screen and (min-width: 768px) {
     .breeding-section {
-      height: 80rem; } }
+      height: 60rem; } }
+  @media only screen and (min-width: 1224px) {
+    .breeding-section {
+      height: 55rem; } }
   .breeding-section .poster-container {
     width: 100%;
+    max-width: 120rem;
     height: auto;
     margin: 2rem auto 0;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-    grid-gap: 1.5rem; }
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-row-gap: 2rem; }
     @media only screen and (min-width: 768px) {
       .breeding-section .poster-container {
-        width: 85%;
         margin: 5rem auto 0;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        grid-row-gap: 1.5rem; } }
+        width: 85%; } }
+    @media only screen and (min-width: 1024px) {
+      .breeding-section .poster-container {
+        width: 65%; } }
+    @media only screen and (min-width: 1224px) {
+      .breeding-section .poster-container {
+        width: 75%;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        grid-row-gap: 3rem; } }
     .breeding-section .poster-container .poster-boxes {
-      width: 22rem;
+      width: 75%;
       height: 7rem;
       margin: 0 auto;
       border: 0.1rem solid #fff;
       cursor: pointer; }
       @media only screen and (min-width: 768px) {
         .breeding-section .poster-container .poster-boxes {
-          width: 25rem; } }
+          width: 29rem; } }
+      @media only screen and (min-width: 1824px) {
+        .breeding-section .poster-container .poster-boxes {
+          width: 30rem; } }
       .breeding-section .poster-container .poster-boxes:nth-of-type(1) {
         background: url(../public/images/DaGoldenChildPin.png);
         background-position: center;
@@ -324,10 +342,144 @@ body {
         background-repeat: no-repeat;
         background-size: cover; }
 
+.bullies-section {
+  height: 200rem;
+  position: relative;
+  background-color: #050505c5; }
+  .bullies-section::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url(../public/images/ssserpentsandbulliesfinal.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-attachment: fixed;
+    filter: drop-shadow(0.3rem 0.3rem 0.3rem #050505db);
+    -webkit-filter: drop-shadow(0.3rem 0.3rem 0.3rem #050505db);
+    z-index: -1; }
+  .bullies-section::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url(../public/images/bangsal-nam-9HMGyZJfrk8-unsplash.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    z-index: -2; }
+  .bullies-section .bullies-wrapper {
+    width: 100%;
+    height: calc(100% - 10rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; }
+    .bullies-section .bullies-wrapper .bullies-container {
+      width: 90%;
+      height: calc(100% / 2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      border: 1px solid blue; }
+      .bullies-section .bullies-wrapper .bullies-container .bullies-boxes {
+        width: 20rem;
+        height: 30rem;
+        background-color: #050505ba;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column; }
+        .bullies-section .bullies-wrapper .bullies-container .bullies-boxes:not(:last-child) {
+          margin-bottom: 2rem; }
+        .bullies-section .bullies-wrapper .bullies-container .bullies-boxes .bullies-content {
+          width: 100%; }
+        .bullies-section .bullies-wrapper .bullies-container .bullies-boxes .bullies-content-headshot {
+          height: 55%;
+          position: relative; }
+          .bullies-section .bullies-wrapper .bullies-container .bullies-boxes .bullies-content-headshot .headshot-box {
+            width: 13rem;
+            height: 13rem;
+            position: relative;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -webkit-transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            -o-transform: translate(-50%, -50%);
+            top: 55%;
+            overflow: hidden;
+            border: 0.2rem solid #fff;
+            border-radius: 40rem;
+            -webkit-border-radius: 40rem;
+            -moz-border-radius: 40rem;
+            -ms-border-radius: 40rem;
+            -o-border-radius: 40rem; }
+            .bullies-section .bullies-wrapper .bullies-container .bullies-boxes .bullies-content-headshot .headshot-box::after {
+              content: "";
+              width: 100%;
+              height: 100%;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              -webkit-transform: translate(-50%, -50%);
+              -moz-transform: translate(-50%, -50%);
+              -ms-transform: translate(-50%, -50%);
+              -o-transform: translate(-50%, -50%);
+              background-image: url(../public/images/TransparentGrimm.png);
+              background-position: -15px 5px;
+              background-size: cover;
+              background-repeat: no-repeat; }
+        .bullies-section .bullies-wrapper .bullies-container .bullies-boxes .bullies-content-info {
+          height: 45%;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start; }
+          .bullies-section .bullies-wrapper .bullies-container .bullies-boxes .bullies-content-info .bullies-content-info-name {
+            width: 100%;
+            margin-bottom: 1rem;
+            font-size: 3.5rem;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center; }
+          .bullies-section .bullies-wrapper .bullies-container .bullies-boxes .bullies-content-info .bullies-content-info-stats {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column; }
+            .bullies-section .bullies-wrapper .bullies-container .bullies-boxes .bullies-content-info .bullies-content-info-stats li {
+              width: 60%;
+              margin-bottom: 1rem;
+              color: #fff;
+              font-size: 1.25rem;
+              display: flex;
+              justify-content: flex-start;
+              align-items: center; }
+              .bullies-section .bullies-wrapper .bullies-container .bullies-boxes .bullies-content-info .bullies-content-info-stats li img {
+                width: 1.8rem;
+                height: 1.8rem;
+                margin-right: 1rem;
+                object-fit: contain; }
+
 .gallery-section {
   height: 10rem;
   position: relative;
   background-color: #050505aa; }
+  @media only screen and (min-width: 768px) {
+    .gallery-section {
+      height: 12rem; } }
   .gallery-section::after {
     content: "";
     width: 100%;
@@ -345,6 +497,9 @@ body {
   height: 10rem;
   position: relative;
   background-color: #050505aa; }
+  @media only screen and (min-width: 768px) {
+    .merch-section {
+      height: 12rem; } }
   .merch-section::after {
     content: "";
     width: 100%;
@@ -360,7 +515,8 @@ body {
 
 section {
   width: 100%;
-  height: auto; }
+  height: auto;
+  overflow: hidden; }
 
 .btn-box {
   width: 17rem;
@@ -374,7 +530,7 @@ section {
   -ms-transition: 0.3s ease;
   -o-transition: 0.3s ease;
   box-shadow: 0.2rem 0.2rem 0.4rem #050505; }
-  @media only screen and (min-width: 1224px) {
+  @media only screen and (min-width: 768px) {
     .btn-box {
       width: 20rem;
       height: 4rem; } }
@@ -419,7 +575,7 @@ section {
     -ms-transition: 0.3s ease;
     -o-transition: 0.3s ease;
     z-index: 2; }
-    @media only screen and (min-width: 1224px) {
+    @media only screen and (min-width: 768px) {
       .btn-box .btns:link,
       .btn-box .btns:visited {
         font-size: 1.9rem; } }
@@ -451,6 +607,7 @@ section {
   letter-spacing: 0.4rem; }
   @media only screen and (min-width: 768px) {
     .section-titles {
+      height: 12rem;
       font-size: 3rem; } }
   .section-titles .link-title {
     text-decoration: none;

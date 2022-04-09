@@ -1,0 +1,16 @@
+.merch-section {
+  height: 10rem;
+  position: relative;
+  background-color: #050505aa;
+
+  &::after {
+    content: "";
+    @include keep-it-hundo;
+    @include absol-topLeftZero;
+    background: url(../public/images/parker-burchfield-tvG4WvjgsEY-unsplash.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+  }
+}

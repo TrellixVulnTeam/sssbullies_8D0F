@@ -1,0 +1,470 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@300&display=swap");
+@font-face {
+  font-family: "Bahnschrift";
+  src: url(../public/fonts/bahnschrift.ttf); }
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%;
+  /*Equivalent to 10px*/
+  scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Bahnschrift", "sans-serif";
+  overflow-x: hidden;
+  background-color: #050505; }
+
+.header {
+  width: 100%;
+  height: 1rem;
+  position: relative;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.3s ease;
+  -webkit-transition: 0.3s ease;
+  -moz-transition: 0.3s ease;
+  -ms-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+  z-index: 100; }
+
+.hero {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-image: url(../public/images/GrimmPoster.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  overflow: hidden; }
+  .hero .logo-btn-container {
+    width: 100%;
+    height: 90%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; }
+    @media only screen and (min-width: 1224px) {
+      .hero .logo-btn-container {
+        height: 95%; } }
+    .hero .logo-btn-container .company-main-logo {
+      width: 100%;
+      height: auto;
+      margin-bottom: 2rem;
+      filter: drop-shadow(0.2rem 0.2rem 0.3rem #050505ce);
+      -webkit-filter: drop-shadow(0.2rem 0.2rem 0.3rem #050505ce); }
+      @media only screen and (min-width: 768px) {
+        .hero .logo-btn-container .company-main-logo {
+          width: 80%; } }
+      @media only screen and (min-width: 1024px) {
+        .hero .logo-btn-container .company-main-logo {
+          width: 45%; } }
+      @media only screen and (min-width: 1224px) {
+        .hero .logo-btn-container .company-main-logo {
+          width: 40%; } }
+      .hero .logo-btn-container .company-main-logo .company-main-logo-img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain; }
+
+.burger {
+  width: 5rem;
+  height: 5rem;
+  position: fixed;
+  top: 1%;
+  right: 5%;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  @media only screen and (min-width: 768px) {
+    .burger {
+      right: 3%; } }
+  @media only screen and (min-width: 1224px) {
+    .burger {
+      display: none; } }
+  .burger .cheese {
+    width: 80%;
+    height: 70%;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    filter: drop-shadow(0.1rem 0.1rem 0.1rem #050505a1);
+    -webkit-filter: drop-shadow(0.1rem 0.1rem 0.1rem #050505a1); }
+    .burger .cheese .top {
+      width: 100%;
+      height: 0.3rem;
+      margin-bottom: 0.6rem;
+      background-color: #fff;
+      transition: 0.3s ease;
+      -webkit-transition: 0.3s ease;
+      -moz-transition: 0.3s ease;
+      -ms-transition: 0.3s ease;
+      -o-transition: 0.3s ease; }
+    .burger .cheese .meat {
+      width: 75%;
+      height: 0.3rem;
+      margin-bottom: 0.6rem;
+      background-color: #fff;
+      transition: 0.3s ease;
+      -webkit-transition: 0.3s ease;
+      -moz-transition: 0.3s ease;
+      -ms-transition: 0.3s ease;
+      -o-transition: 0.3s ease; }
+    .burger .cheese .bottom {
+      width: 100%;
+      height: 0.3rem;
+      background-color: #fff;
+      transition: 0.3s ease;
+      -webkit-transition: 0.3s ease;
+      -moz-transition: 0.3s ease;
+      -ms-transition: 0.3s ease;
+      -o-transition: 0.3s ease; }
+
+.topChange {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: rotate(225deg);
+  -webkit-transform: rotate(225deg);
+  -moz-transform: rotate(225deg);
+  -ms-transform: rotate(225deg);
+  -o-transform: rotate(225deg); }
+
+.meatGone {
+  display: none; }
+
+.bottomChange {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: rotate(-225deg);
+  -webkit-transform: rotate(-225deg);
+  -moz-transform: rotate(-225deg);
+  -ms-transform: rotate(-225deg);
+  -o-transform: rotate(-225deg); }
+
+.nav-main {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: -100vw;
+  transition: 0.4s ease;
+  -webkit-transition: 0.4s ease;
+  -moz-transition: 0.4s ease;
+  -ms-transition: 0.4s ease;
+  -o-transition: 0.4s ease; }
+  @media only screen and (min-width: 1224px) {
+    .nav-main {
+      height: 8rem;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center; } }
+  .nav-main::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #050505;
+    opacity: 0.97;
+    z-index: -1; }
+    @media only screen and (min-width: 1224px) {
+      .nav-main::after {
+        display: none; } }
+  .nav-main .nav-ul {
+    width: 100%;
+    height: 60%;
+    margin-top: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly; }
+    @media only screen and (min-width: 768px) {
+      .nav-main .nav-ul {
+        margin-top: 7rem; } }
+    @media only screen and (min-width: 1224px) {
+      .nav-main .nav-ul {
+        width: 60%;
+        flex-direction: row;
+        margin-top: 0; } }
+    .nav-main .nav-ul .nav-li {
+      list-style-type: none;
+      position: relative; }
+      .nav-main .nav-ul .nav-li::after {
+        content: "";
+        width: 0;
+        height: 0.2rem;
+        position: absolute;
+        left: 0;
+        bottom: -5%;
+        transition: 0.3s ease;
+        -webkit-transition: 0.3s ease;
+        -moz-transition: 0.3s ease;
+        -ms-transition: 0.3s ease;
+        -o-transition: 0.3s ease;
+        background-color: #cc0000; }
+      .nav-main .nav-ul .nav-li:hover::after {
+        width: 99%; }
+      @media only screen and (min-width: 1224px) {
+        .nav-main .nav-ul .nav-li {
+          display: flex;
+          justify-content: center;
+          align-items: center; } }
+      .nav-main .nav-ul .nav-li .nav-links:link,
+      .nav-main .nav-ul .nav-li .nav-links:visited {
+        text-decoration: none;
+        color: #fff;
+        font-size: 3rem;
+        letter-spacing: 0.5rem;
+        transition: 0.3s ease;
+        -webkit-transition: 0.3s ease;
+        -moz-transition: 0.3s ease;
+        -ms-transition: 0.3s ease;
+        -o-transition: 0.3s ease; }
+        @media only screen and (min-width: 768px) {
+          .nav-main .nav-ul .nav-li .nav-links:link,
+          .nav-main .nav-ul .nav-li .nav-links:visited {
+            font-size: 4rem; } }
+        @media only screen and (min-width: 1224px) {
+          .nav-main .nav-ul .nav-li .nav-links:link,
+          .nav-main .nav-ul .nav-li .nav-links:visited {
+            font-size: 1.75rem;
+            text-shadow: 0.2rem 0.2rem 0.3rem #050505; } }
+
+.logoChange {
+  opacity: 0; }
+
+.showNav {
+  transform: translateX(100vw);
+  -webkit-transform: translateX(100vw);
+  -moz-transform: translateX(100vw);
+  -ms-transform: translateX(100vw);
+  -o-transform: translateX(100vw); }
+
+.breeding-section {
+  height: 75rem; }
+  @media only screen and (min-width: 768px) {
+    .breeding-section {
+      height: 80rem; } }
+  .breeding-section .poster-container {
+    width: 100%;
+    height: auto;
+    margin: 2rem auto 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    grid-gap: 1.5rem; }
+    @media only screen and (min-width: 768px) {
+      .breeding-section .poster-container {
+        width: 85%;
+        margin: 5rem auto 0;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-row-gap: 1.5rem; } }
+    .breeding-section .poster-container .poster-boxes {
+      width: 22rem;
+      height: 7rem;
+      margin: 0 auto;
+      border: 0.1rem solid #fff;
+      cursor: pointer; }
+      @media only screen and (min-width: 768px) {
+        .breeding-section .poster-container .poster-boxes {
+          width: 25rem; } }
+      .breeding-section .poster-container .poster-boxes:nth-of-type(1) {
+        background: url(../public/images/DaGoldenChildPin.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover; }
+      .breeding-section .poster-container .poster-boxes:nth-of-type(2) {
+        background: url(../public/images/GrimmPin.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover; }
+      .breeding-section .poster-container .poster-boxes:nth-of-type(3) {
+        background: url(../public/images/GrimmXBlueCluePin.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover; }
+      .breeding-section .poster-container .poster-boxes:nth-of-type(4) {
+        background: url(../public/images/ZeroPin.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover; }
+      .breeding-section .poster-container .poster-boxes:nth-of-type(5) {
+        background: url(../public/images/GrimmPin.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover; }
+      .breeding-section .poster-container .poster-boxes:nth-of-type(6) {
+        background: url(../public/images/EmperorNeroPin.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover; }
+
+.gallery-section {
+  height: 10rem;
+  position: relative;
+  background-color: #050505aa; }
+  .gallery-section::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(../public/images/GrimmPoster.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1; }
+
+.merch-section {
+  height: 10rem;
+  position: relative;
+  background-color: #050505aa; }
+  .merch-section::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(../public/images/parker-burchfield-tvG4WvjgsEY-unsplash.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1; }
+
+section {
+  width: 100%;
+  height: auto; }
+
+.btn-box {
+  width: 17rem;
+  height: 3.5rem;
+  position: relative;
+  background-color: #fff;
+  overflow: hidden;
+  transition: 0.3s ease;
+  -webkit-transition: 0.3s ease;
+  -moz-transition: 0.3s ease;
+  -ms-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+  box-shadow: 0.2rem 0.2rem 0.4rem #050505; }
+  @media only screen and (min-width: 1224px) {
+    .btn-box {
+      width: 20rem;
+      height: 4rem; } }
+  .btn-box:hover {
+    background-color: #686766;
+    transform: translateY(7%);
+    -webkit-transform: translateY(7%);
+    -moz-transform: translateY(7%);
+    -ms-transform: translateY(7%);
+    -o-transform: translateY(7%); }
+  .btn-box:hover > .btns:link,
+  .btn-box .btns:visited {
+    color: #fff;
+    text-shadow: 0.2rem 0.2rem 0.3rem #050505; }
+  .btn-box::after {
+    content: "";
+    width: 12%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 40%;
+    background-color: rgba(215, 209, 209, 0.485);
+    box-shadow: 0.2rem 0.2rem 0.5rem rgba(215, 209, 209, 0.485);
+    animation: shineTop 1s linear infinite 0.05s;
+    -webkit-animation: shineTop 1s linear infinite 0.05s; }
+  .btn-box .btns:link,
+  .btn-box .btns:visited {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    text-decoration: none;
+    background: transparent;
+    font-size: 1.6rem;
+    color: #050505;
+    text-shadow: 0.2rem 0.2rem 0.3rem #7e7c7c;
+    transition: 0.3s ease;
+    -webkit-transition: 0.3s ease;
+    -moz-transition: 0.3s ease;
+    -ms-transition: 0.3s ease;
+    -o-transition: 0.3s ease;
+    z-index: 2; }
+    @media only screen and (min-width: 1224px) {
+      .btn-box .btns:link,
+      .btn-box .btns:visited {
+        font-size: 1.9rem; } }
+
+@keyframes shineTop {
+  0% {
+    transform: translateX(-500%) skewX(-30deg);
+    -webkit-transform: translateX(-500%) skewX(-30deg);
+    -moz-transform: translateX(-500%) skewX(-30deg);
+    -ms-transform: translateX(-500%) skewX(-30deg);
+    -o-transform: translateX(-500%) skewX(-30deg); }
+  100% {
+    transform: translateX(500%) skewX(-30deg);
+    -webkit-transform: translateX(500%) skewX(-30deg);
+    -moz-transform: translateX(500%) skewX(-30deg);
+    -ms-transform: translateX(500%) skewX(-30deg);
+    -o-transform: translateX(500%) skewX(-30deg); } }
+
+.section-titles {
+  width: 100%;
+  height: 10rem;
+  border-top: 0.2rem solid #cc0000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 0.2rem 0.2rem 0.3rem #050505;
+  color: #fff;
+  font-size: 2.15rem;
+  letter-spacing: 0.4rem; }
+  @media only screen and (min-width: 768px) {
+    .section-titles {
+      font-size: 3rem; } }
+  .section-titles .link-title {
+    text-decoration: none;
+    color: #fff;
+    transition: 0.3s ease;
+    -webkit-transition: 0.3s ease;
+    -moz-transition: 0.3s ease;
+    -ms-transition: 0.3s ease;
+    -o-transition: 0.3s ease; }
+    .section-titles .link-title:hover {
+      color: #cc0000; }
+
+.bg-overlay {
+  width: 100%;
+  height: 100%;
+  background-color: #050505;
+  opacity: 0.8; }

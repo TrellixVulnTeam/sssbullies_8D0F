@@ -1,0 +1,26 @@
+.section-titles {
+  width: 100%;
+  height: 10rem;
+  border-top: 0.2rem solid $color-red;
+  @include flex-center;
+  @include text-shadow;
+  color: $color-lite;
+  font-size: 2.15rem;
+  letter-spacing: 0.4rem;
+
+  @include tabletPortrait {
+    & {
+      font-size: 3rem;
+    }
+  }
+
+  .link-title {
+    text-decoration: none;
+    color: $color-lite;
+    @include transit3;
+
+    &:hover {
+      color: $color-red;
+    }
+  }
+}

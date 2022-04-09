@@ -1,0 +1,84 @@
+.btn-box {
+  width: 17rem;
+  height: 3.5rem;
+  position: relative;
+  background-color: $color-lite;
+  overflow: hidden;
+  @include transit3;
+  @include shadow;
+
+  @include desktop {
+    & {
+      width: 20rem;
+      height: 4rem;
+    }
+  }
+
+  &:hover {
+    background-color: rgb(104, 103, 102);
+    transform: translateY(7%);
+    -webkit-transform: translateY(7%);
+    -moz-transform: translateY(7%);
+    -ms-transform: translateY(7%);
+    -o-transform: translateY(7%);
+  }
+
+  &:hover > .btns:link,
+  .btns:visited {
+    color: $color-lite;
+    @include text-shadow;
+  }
+
+  &::after {
+    content: "";
+    width: 12%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 40%;
+    background-color: rgba(215, 209, 209, 0.485);
+    box-shadow: 0.2rem 0.2rem 0.5rem rgba(215, 209, 209, 0.485);
+    animation: shineTop 1s linear infinite 0.05s;
+    -webkit-animation: shineTop 1s linear infinite 0.05s;
+  }
+
+  .btns:link,
+  .btns:visited {
+    @include keep-it-hundo;
+    @include flex-center;
+    position: relative;
+    text-decoration: none;
+    background: transparent;
+    font-size: 1.6rem;
+    color: $color-dark;
+    @include text-shadowgray;
+    @include transit3;
+    z-index: 2;
+
+    @include desktop {
+      & {
+        font-size: 1.9rem;
+      }
+    }
+  }
+}
+
+// Keyframes for shiny button animation
+
+@keyframes shineTop {
+  0% {
+    transform: translateX(-500%) skewX(-30deg);
+    -webkit-transform: translateX(-500%) skewX(-30deg);
+    -moz-transform: translateX(-500%) skewX(-30deg);
+    -ms-transform: translateX(-500%) skewX(-30deg);
+    -o-transform: translateX(-500%) skewX(-30deg);
+  }
+
+  100% {
+    transform: translateX(500%) skewX(-30deg);
+    -webkit-transform: translateX(500%) skewX(-30deg);
+    -moz-transform: translateX(500%) skewX(-30deg);
+    -ms-transform: translateX(500%) skewX(-30deg);
+    -o-transform: translateX(500%) skewX(-30deg);
+  }
+}

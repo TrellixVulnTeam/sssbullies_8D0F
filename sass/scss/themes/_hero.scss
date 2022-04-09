@@ -1,0 +1,55 @@
+.hero {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-image: url(../public/images/GrimmPoster.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  overflow: hidden;
+
+  .logo-btn-container {
+    width: 100%;
+    height: 90%;
+    @include absol-topLeftZero;
+    @include flex-center-col;
+
+    @include desktop {
+      & {
+        height: 95%;
+      }
+    }
+
+    .company-main-logo {
+      width: 100%;
+      height: auto;
+      margin-bottom: 2rem;
+      filter: drop-shadow(0.2rem 0.2rem 0.3rem #050505ce);
+      -webkit-filter: drop-shadow(0.2rem 0.2rem 0.3rem #050505ce);
+
+      @include tabletPortrait {
+        & {
+          width: 80%;
+        }
+      }
+
+      @include tabletLandscape {
+        & {
+          width: 45%;
+        }
+      }
+
+      @include desktop {
+        & {
+          width: 40%;
+        }
+      }
+
+      .company-main-logo-img {
+        @include keep-it-hundo;
+        object-fit: contain;
+      }
+    }
+  }
+}

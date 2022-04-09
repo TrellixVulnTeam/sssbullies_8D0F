@@ -1,0 +1,5 @@
+.bg-overlay {
+  @include keep-it-hundo;
+  background-color: $color-dark;
+  opacity: 0.8;
+}

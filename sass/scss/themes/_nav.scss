@@ -1,0 +1,120 @@
+.nav-main {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: -100vw;
+  @include transit4;
+
+  @include desktop {
+    & {
+      height: 8rem;
+      left: 0;
+      @include flex-center;
+    }
+  }
+
+  &::after {
+    content: "";
+    @include keep-it-hundo;
+    @include absol-topLeftZero;
+    background-color: $color-dark;
+    opacity: 0.97;
+    z-index: -1;
+
+    @include desktop {
+      & {
+        display: none;
+      }
+    }
+  }
+
+  .nav-ul {
+    width: 100%;
+    height: 60%;
+    margin-top: 5rem;
+    @include flex-center-col;
+    justify-content: space-evenly;
+
+    @include tabletPortrait {
+      & {
+        margin-top: 7rem;
+      }
+    }
+
+    @include desktop {
+      & {
+        width: 60%;
+        flex-direction: row;
+        margin-top: 0;
+      }
+    }
+
+    .nav-li {
+      list-style-type: none;
+      position: relative;
+      // border: 1px solid red;
+
+      &::after {
+        content: "";
+        width: 0;
+        height: 0.2rem;
+        position: absolute;
+        left: 0;
+        bottom: -5%;
+        @include transit3;
+        background-color: $color-red;
+      }
+
+      &:hover::after {
+        width: 99%;
+      }
+
+      @include desktop {
+        & {
+          @include flex-center;
+        }
+      }
+
+      .nav-links:link,
+      .nav-links:visited {
+        text-decoration: none;
+        color: $color-lite;
+        font-size: 3rem;
+        letter-spacing: 0.5rem;
+        @include transit3;
+
+        @include tabletPortrait {
+          & {
+            font-size: 4rem;
+          }
+        }
+
+        @include desktop {
+          & {
+            font-size: 1.75rem;
+            @include text-shadow;
+          }
+
+          // &:hover {
+          //   color: $color-red;
+          // }
+        }
+      }
+    }
+  }
+}
+
+// Class Animations for Javascript
+
+.logoChange {
+  opacity: 0;
+}
+
+.showNav {
+  transform: translateX(100vw);
+  -webkit-transform: translateX(100vw);
+  -moz-transform: translateX(100vw);
+  -ms-transform: translateX(100vw);
+  -o-transform: translateX(100vw);
+}

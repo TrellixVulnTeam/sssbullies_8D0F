@@ -1,7 +1,19 @@
 .bullies-section {
-  height: 200rem;
+  height: 130rem;
   position: relative;
   background-color: #050505c5;
+
+  @include tabletPortrait {
+    & {
+      height: 100rem;
+    }
+  }
+
+  @include desktop {
+    & {
+      height: 120rem;
+    }
+  }
 
   &::before {
     content: "";
@@ -31,35 +43,100 @@
 
   .bullies-wrapper {
     width: 100%;
+    max-width: 120rem;
     height: calc(100% - 10rem);
+    margin: 0 auto;
     @include flex-center-col;
+    // border: 1px solid blue;
+
+    @include tabletPortrait {
+      & {
+        height: calc(100% - 15rem);
+      }
+    }
+
+    @include desktop {
+      & {
+        height: calc(85% - 10rem);
+      }
+    }
 
     .bullies-container {
       width: 90%;
-      height: calc(100% / 2);
+      height: 100%;
       @include flex-center-col;
-      border: 1px solid blue;
+      justify-content: flex-start;
+      // border: 1px solid green;
+
+      &:nth-of-type(2) {
+        display: none;
+
+        @include tabletPortrait {
+          & {
+            @include flex-center;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: flex-start;
+          }
+        }
+
+        @include desktop {
+          & {
+            align-items: center;
+          }
+        }
+      }
+
+      @include tabletPortrait {
+        & {
+          @include flex-center;
+          flex-direction: row;
+          justify-content: space-evenly;
+        }
+      }
+
+      @include tabletLandscape {
+        & {
+          width: 75%;
+        }
+      }
 
       .bullies-boxes {
         width: 20rem;
         height: 30rem;
-        background-color: #050505ba;
+        margin-top: 4rem;
+        background-color: #050505ab;
         @include flex-center-col;
 
-        &:not(:last-child) {
-          margin-bottom: 2rem;
+        @include tabletPortrait {
+          & {
+            margin-top: 0;
+          }
         }
+
+        @include desktop {
+          & {
+            transform: scale(1.2);
+            -webkit-transform: scale(1.2);
+            -moz-transform: scale(1.2);
+            -ms-transform: scale(1.2);
+            -o-transform: scale(1.2);
+          }
+        }
+
+        // &:not(:first-child) {
+        //   margin-top: 5rem;
+        // }
 
         .bullies-content {
           width: 100%;
-          //   border: 1px solid blue;
         }
+
+        // Bullies Image/Photo
 
         .bullies-content-headshot {
           height: 55%;
-          //   margin-top: 1rem;
           position: relative;
-          //   border: 1px solid red;
 
           .headshot-box {
             width: 13rem;
@@ -87,6 +164,8 @@
           }
         }
 
+        // Bullies Name and Stats info
+
         .bullies-content-info {
           height: 45%;
           display: flex;
@@ -96,9 +175,19 @@
           .bullies-content-info-name {
             width: 100%;
             margin-bottom: 1rem;
+            position: relative;
             font-size: 3.5rem;
             color: $color-lite;
             @include flex-center;
+
+            &::after {
+              content: "";
+              width: 55%;
+              height: 0.2rem;
+              @include absol-center;
+              top: 90%;
+              background-color: $color-lite;
+            }
           }
 
           .bullies-content-info-stats {
@@ -126,5 +215,17 @@
         }
       }
     }
+
+    // .bullies-container-two {
+    //   display: none;
+
+    //   @include tabletPortrait {
+    //     & {
+    //       // display: block;
+    //       @include flex-center;
+    //       flex-direction: row;
+    //     }
+    //   }
+    // }
   }
 }

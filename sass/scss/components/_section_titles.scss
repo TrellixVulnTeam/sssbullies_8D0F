@@ -16,12 +16,19 @@
   }
 
   .link-title {
+    width: 80%;
     text-decoration: none;
     color: $color-lite;
     @include transit3;
 
     &:hover {
-      color: $color-red;
+      letter-spacing: 1rem;
+
+      @include tabletPortrait {
+        & {
+          letter-spacing: 2rem;
+        }
+      }
     }
   }
 }

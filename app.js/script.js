@@ -52,7 +52,7 @@ window.addEventListener("scroll", () => {
     mediaQueryLandscape.matches === true
   ) {
     navMenu.style.backgroundColor = "#050505";
-    navMenu.style.boxShadow = "1px 1px 5px rgba(5,5,5,.3";
+    navMenu.style.boxShadow = "2px 2px 15px rgba(50,50,50,.5";
   } else {
     navMenu.style.backgroundColor = "transparent";
     navMenu.style.boxShadow = "none";

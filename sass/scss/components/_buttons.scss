@@ -49,6 +49,7 @@
     position: relative;
     text-decoration: none;
     background: transparent;
+    border: none;
     font-size: 1.6rem;
     color: $color-dark;
     @include text-shadowgray;

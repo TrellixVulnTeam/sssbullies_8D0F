@@ -48,6 +48,7 @@
       height: 7rem;
       margin: 0 auto;
       border: 0.1rem solid $color-lite;
+      opacity: 0;
       cursor: pointer;
 
       @include tabletPortrait {
@@ -67,6 +68,7 @@
         background-position: left center;
         background-repeat: no-repeat;
         background-size: cover;
+        animation-delay: 100ms;
       }
 
       &:nth-of-type(2) {
@@ -74,6 +76,7 @@
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
+        animation-delay: 300ms;
       }
 
       &:nth-of-type(3) {
@@ -81,6 +84,7 @@
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
+        animation-delay: 500ms;
       }
 
       &:nth-of-type(4) {
@@ -88,6 +92,7 @@
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
+        animation-delay: 700ms;
       }
 
       &:nth-of-type(5) {
@@ -95,6 +100,7 @@
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
+        animation-delay: 900ms;
       }
 
       &:nth-of-type(6) {
@@ -102,7 +108,99 @@
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
+        animation-delay: 1100ms;
+      }
+
+      .poster-boxes-img {
+        @include keep-it-hundo;
+        opacity: 0;
       }
     }
+  }
+
+  .modal-container {
+    display: none;
+    width: 0;
+    height: 0;
+    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+
+    &::after {
+      content: "";
+      @include keep-it-hundo;
+      @include absol-topLeftZero;
+      background-color: $color-dark;
+      opacity: 0.9;
+      z-index: -1;
+    }
+
+    .far {
+      position: absolute;
+      top: 3%;
+      right: 5%;
+      color: $color-lite;
+      font-size: 3rem;
+      cursor: pointer;
+      z-index: 101;
+    }
+
+    .modal-img-box {
+      width: 90%;
+      height: 80%;
+      @include absol-center;
+      border: 0.1rem solid $color-lite;
+
+      .modal-img {
+        @include keep-it-hundo;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .modalOpen {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// Class Animations for Javascript
+
+.galleryAnimateUp {
+  animation: galleryAnimationLandscape 0.8s linear both;
+  -webkit-animation: galleryAnimationLandscape 0.8s linear both;
+}
+
+// Keyframes for Animations
+
+@keyframes galleryAnimationLandscape {
+  0% {
+    opacity: 0;
+    transform: translateY(120%);
+    -webkit-transform: translateY(120%);
+    -moz-transform: translateY(120%);
+    -ms-transform: translateY(120%);
+    -o-transform: translateY(120%);
+  }
+
+  80% {
+    opacity: 1;
+    transform: translateY(-5%);
+    -webkit-transform: translateY(-5%);
+    -moz-transform: translateY(-5%);
+    -ms-transform: translateY(-5%);
+    -o-transform: translateY(-5%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
   }
 }

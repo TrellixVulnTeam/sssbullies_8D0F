@@ -13,10 +13,19 @@
     content: "";
     @include keep-it-hundo;
     @include absol-topLeftZero;
+    @include transitLong;
     background: url(../public/images/parker-burchfield-tvG4WvjgsEY-unsplash.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     z-index: -1;
+  }
+
+  &:hover::after {
+    transform: scale(2);
+    -webkit-transform: scale(2);
+    -moz-transform: scale(2);
+    -ms-transform: scale(2);
+    -o-transform: scale(2);
   }
 }

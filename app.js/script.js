@@ -58,3 +58,70 @@ window.addEventListener("scroll", () => {
     navMenu.style.boxShadow = "none";
   }
 });
+
+// IntersectionObserver for Breeding Section
+
+const posterContainer = document.querySelector(".poster-container");
+const posterBoxes = document.querySelectorAll(".poster-boxes");
+
+// Observer Callback Function
+
+const breedingObserverFunction = function (entries) {
+  const [entry] = entries;
+  console.log(entry);
+
+  if (entry.isIntersecting) {
+    posterBoxes.forEach((pb) => {
+      pb.classList.toggle("galleryAnimateUp");
+    });
+  }
+
+  // entry.target.classList.toggle("galleryAnimateUp", entry.isIntersecting);
+
+  // Stop Observer after Intersecting
+
+  if (entry.isIntersecting) breedingObserver.unobserve(entry.target);
+};
+
+// Observer Options
+
+const breedingObserverOptions = {
+  root: null,
+  threshold: 0,
+  rootMargin: "-100px",
+};
+
+// Actual Observer
+
+const breedingObserver = new IntersectionObserver(
+  breedingObserverFunction,
+  breedingObserverOptions
+);
+
+breedingObserver.observe(posterContainer);
+
+// ---- IMAGES / MODAL ---- //
+
+const modalContainer = document.querySelector(".modal-container");
+const posterBoxImgs = document.querySelectorAll(".poster-boxes-img");
+const closeModal = document.querySelector(".far");
+const modalImg = document.querySelector(".modal-img");
+
+// Open Modal
+
+posterBoxImgs.forEach((i) => {
+  i.addEventListener("click", (e) => {
+    // console.log(e.currentTarget.src);
+    const currentImages = e.currentTarget.src;
+    modalImg.src = currentImages;
+    modalContainer.classList.add("modalOpen");
+    closeModal.style.display = "block";
+  });
+});
+
+// Close Modal
+
+closeModal.addEventListener("click", () => {
+  modalContainer.classList.remove("modalOpen");
+  closeModal.style.display = "none";
+});

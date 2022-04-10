@@ -1,6 +1,8 @@
 // **** USE STRICT MODE **** //
 "use strict";
 
+// ********** Open/Close Nav Menu Functions ********** //
+
 const logoImg = document.querySelector(".logo-main");
 const navMenu = document.getElementById("nav-main");
 const cheese = document.getElementById("cheese");
@@ -38,6 +40,8 @@ navLinks.forEach((l) => {
     bottomBun.classList.remove("bottomChange");
     topBun.style.width = "100%";
     bottomBun.style.width = "100%";
+    topBun.style.backgroundColor = "#fff";
+    bottomBun.style.backgroundColor = "#fff";
   });
 });
 
@@ -59,7 +63,43 @@ window.addEventListener("scroll", () => {
   }
 });
 
-// IntersectionObserver for Breeding Section
+// ********** IntersectionObserver for Section Titles ********** //
+
+const sectionTitles = document.querySelectorAll(".section-titles");
+
+// Observer Callback Function
+
+const titleObserverFunction = function (entries) {
+  const [entry] = entries;
+  console.log(entry);
+
+  entry.target.classList.toggle("galleryAnimateIn", entry.isIntersecting);
+
+  // Stop Observer after Intersecting
+
+  if (entry.isIntersecting) sectionTitlesObserver.unobserve(entry.target);
+};
+
+// Observer Options
+
+const titleObserverOptions = {
+  root: null,
+  threshold: 0,
+  rootMargin: "-100px",
+};
+
+// Actual Observer
+
+const sectionTitlesObserver = new IntersectionObserver(
+  titleObserverFunction,
+  titleObserverOptions
+);
+
+sectionTitles.forEach((s) => {
+  sectionTitlesObserver.observe(s);
+});
+
+// ********** IntersectionObserver for Breedings Section ********** //
 
 const posterContainer = document.querySelector(".poster-container");
 const posterBoxes = document.querySelectorAll(".poster-boxes");
@@ -100,7 +140,7 @@ const breedingObserver = new IntersectionObserver(
 
 breedingObserver.observe(posterContainer);
 
-// ---- IMAGES / MODAL ---- //
+// ********** Breedings Modal ********** //
 
 const modalContainer = document.querySelector(".modal-container");
 const posterBoxImgs = document.querySelectorAll(".poster-boxes-img");
@@ -125,3 +165,69 @@ closeModal.addEventListener("click", () => {
   modalContainer.classList.remove("modalOpen");
   closeModal.style.display = "none";
 });
+
+// ********** IntersectionObserver for Bullies Section ********** //
+
+const bulliesContainerOne = document.querySelector(".bullies-container-one");
+const bulliesContainerTwo = document.querySelector(".bullies-container-two");
+const bulliesBoxesFirst = document.querySelectorAll(".bullies-boxes-first");
+const bulliesBoxesSecond = document.querySelectorAll(".bullies-boxes-second");
+
+// Observer Callback Function One
+
+const bulliesFirstObserverFunction = function (entries) {
+  const [entry] = entries;
+  console.log(entry);
+
+  if (entry.isIntersecting) {
+    bulliesBoxesFirst.forEach((b1) => {
+      b1.classList.toggle("galleryAnimateUp");
+    });
+  }
+
+  // Stop Observer after Intersecting
+
+  if (entry.isIntersecting) bulliesOneObserver.unobserve(entry.target);
+};
+
+// Observer Callback Function Two
+
+const bulliesSecondObserverFunction = function (entries) {
+  const [entry] = entries;
+  console.log(entry);
+
+  if (entry.isIntersecting) {
+    bulliesBoxesSecond.forEach((b2) => {
+      b2.classList.toggle("galleryAnimateUp");
+    });
+  }
+
+  // Stop Observer after Intersecting
+
+  if (entry.isIntersecting) bulliesTwoObserver.unobserve(entry.target);
+};
+
+// Observer Options
+
+const bulliesObserverOptions = {
+  root: null,
+  threshold: 0,
+  rootMargin: "-100px",
+};
+
+// Actual Observers
+
+const bulliesOneObserver = new IntersectionObserver(
+  bulliesFirstObserverFunction,
+  bulliesObserverOptions
+);
+
+const bulliesTwoObserver = new IntersectionObserver(
+  bulliesSecondObserverFunction,
+  bulliesObserverOptions
+);
+
+// Call/Watch Observers
+
+bulliesOneObserver.observe(bulliesContainerOne);
+bulliesTwoObserver.observe(bulliesContainerTwo);

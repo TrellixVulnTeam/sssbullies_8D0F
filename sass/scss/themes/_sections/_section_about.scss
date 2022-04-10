@@ -6,6 +6,12 @@
   background-size: cover;
   background-attachment: fixed;
 
+  @include desktop {
+    & {
+      height: 65rem;
+    }
+  }
+
   .about-container {
     width: 100%;
     max-width: 90rem;
@@ -13,6 +19,12 @@
     margin: 0 auto;
     @include flex-center-col;
     justify-content: space-evenly;
+
+    @include desktop {
+      & {
+        height: 75%;
+      }
+    }
 
     .about-content {
       width: 80%;
@@ -27,16 +39,18 @@
       text-indent: 2.5rem;
       @include text-shadowdeep;
 
-      // &::after {
-      //   content: "";
-      //   width: 115%;
-      //   height: 115%;
-      //   @include absol-center;
-      //   background-color: $color-dark;
-      //   opacity: 0.7;
-      //   z-index: -1;
+      @include tabletPortrait {
+        & {
+          width: 70%;
+          font-size: 2rem;
+        }
+      }
 
-      // }
+      @include desktop {
+        & {
+          width: 75%;
+        }
+      }
     }
   }
 }

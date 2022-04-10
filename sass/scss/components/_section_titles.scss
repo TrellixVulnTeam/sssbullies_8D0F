@@ -1,12 +1,21 @@
 .section-titles {
   width: 100%;
   height: 10rem;
-  border-top: 0.2rem solid $color-red;
+  position: relative;
   @include flex-center;
   @include text-shadow;
   color: $color-lite;
   font-size: 2.15rem;
   letter-spacing: 0.4rem;
+  opacity: 0;
+
+  &::after {
+    content: "";
+    @include keep-it-hundo;
+    @include absol-center;
+    border-top: 0.2rem solid $color-lite;
+    z-index: -1;
+  }
 
   @include tabletPortrait {
     & {
@@ -30,5 +39,41 @@
         }
       }
     }
+  }
+}
+
+.galleryAnimateIn {
+  animation: galleryAnimation 1s linear both;
+  -webkit-animation: galleryAnimation 1s linear both;
+}
+
+// Keyframes for Animations
+
+@keyframes galleryAnimation {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+  }
+
+  80% {
+    opacity: 1;
+    transform: translateX(5%);
+    -webkit-transform: translateX(5%);
+    -moz-transform: translateX(5%);
+    -ms-transform: translateX(5%);
+    -o-transform: translateX(5%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
   }
 }

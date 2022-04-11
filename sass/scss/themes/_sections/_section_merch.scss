@@ -1,7 +1,8 @@
 .merch-section {
   height: 10rem;
   position: relative;
-  background-color: #050505aa;
+  background-color: $color-dark;
+  @include transit4;
 
   @include tabletPortrait {
     & {

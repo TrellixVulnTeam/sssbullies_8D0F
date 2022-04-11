@@ -8,14 +8,7 @@
   font-size: 2.15rem;
   letter-spacing: 0.4rem;
   opacity: 0;
-
-  &::after {
-    content: "";
-    @include keep-it-hundo;
-    @include absol-center;
-    border-top: 0.2rem solid $color-lite;
-    z-index: -1;
-  }
+  overflow: hidden;
 
   @include tabletPortrait {
     & {
@@ -59,14 +52,14 @@
     -o-transform: translateX(-100%);
   }
 
-  80% {
-    opacity: 1;
-    transform: translateX(5%);
-    -webkit-transform: translateX(5%);
-    -moz-transform: translateX(5%);
-    -ms-transform: translateX(5%);
-    -o-transform: translateX(5%);
-  }
+  // 80% {
+  //   opacity: 1;
+  //   transform: translateX(5%);
+  //   -webkit-transform: translateX(5%);
+  //   -moz-transform: translateX(5%);
+  //   -ms-transform: translateX(5%);
+  //   -o-transform: translateX(5%);
+  // }
 
   100% {
     opacity: 1;

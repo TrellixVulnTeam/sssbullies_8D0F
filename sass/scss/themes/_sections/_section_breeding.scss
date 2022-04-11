@@ -47,9 +47,15 @@
       width: 75%;
       height: 7rem;
       margin: 0 auto;
+      position: relative;
       border: 0.1rem solid $color-lite;
       opacity: 0;
+      @include transit4;
       cursor: pointer;
+
+      &:hover {
+        border: 0.1rem solid $color-red;
+      }
 
       @include tabletPortrait {
         & {
@@ -114,6 +120,7 @@
       .poster-boxes-img {
         @include keep-it-hundo;
         opacity: 0;
+        position: relative;
       }
     }
   }

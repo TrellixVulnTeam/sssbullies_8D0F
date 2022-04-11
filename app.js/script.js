@@ -73,6 +73,8 @@ const titleObserverFunction = function (entries) {
   const [entry] = entries;
   console.log(entry);
 
+  // entry.target.classList.toggle("galleryAnimateUp", entry.isIntersecting);
+
   entry.target.classList.toggle("galleryAnimateUp", entry.isIntersecting);
 
   // Stop Observer after Intersecting
@@ -99,6 +101,42 @@ sectionTitles.forEach((s) => {
   sectionTitlesObserver.observe(s);
 });
 
+// ********** IntersectionObserver for About Content ********** //
+
+const aboutContent = document.querySelectorAll(".about-content");
+
+// Observer Callback Function
+
+const aboutContentFunction = function (entries) {
+  const [entry] = entries;
+  console.log(entry);
+
+  entry.target.classList.toggle("galleryAnimateUp", entry.isIntersecting);
+
+  // Stop Observer after Intersecting
+
+  if (entry.isIntersecting) aboutContentObserver.unobserve(entry.target);
+};
+
+// Observer Options
+
+const aboutContentObserverOptions = {
+  root: null,
+  threshold: 0,
+  rootMargin: "-100px",
+};
+
+// Actual Observer
+
+const aboutContentObserver = new IntersectionObserver(
+  aboutContentFunction,
+  aboutContentObserverOptions
+);
+
+aboutContent.forEach((ab) => {
+  aboutContentObserver.observe(ab);
+});
+
 // ********** IntersectionObserver for BG Opacity sections ********** //
 
 const bgOpacitySections = document.querySelectorAll(".bg-opacity-sections");
@@ -109,7 +147,7 @@ const bgOpacityObserverFunction = function (entries) {
   const [entry] = entries;
   console.log(entry);
   if (entry.isIntersecting) {
-    entry.target.style.backgroundColor = "#050505aa";
+    entry.target.style.backgroundColor = "rgba(05,05,05,0.8";
   }
 
   // entry.target.classList.toggle("galleryAnimateUp", entry.isIntersecting);

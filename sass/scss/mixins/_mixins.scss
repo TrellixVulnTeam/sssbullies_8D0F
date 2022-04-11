@@ -94,6 +94,10 @@
   box-shadow: 0rem 0.2rem 0.5rem $color-gray-lite;
 }
 
+@mixin shadow-red {
+  box-shadow: 0.1rem 0.3rem 0.8rem $color-red;
+}
+
 @mixin text-shadow {
   text-shadow: 0.2rem 0.2rem 0.3rem $color-dark;
 }
@@ -108,6 +112,33 @@
 
 @mixin text-shadowgray-lite {
   text-shadow: 0.1rem 0.1rem 0.3rem $color-gray-lite;
+}
+
+//----------SKEW SHAPE MIXINS-----------
+
+@mixin skew-half {
+  transform-origin: bottom left;
+  transform: skew(-40deg, 0deg);
+  -webkit-transform: skew(-40deg, 0deg);
+  -moz-transform: skew(-40deg, 0deg);
+  -ms-transform: skew(-40deg, 0deg);
+  -o-transform: skew(-40deg, 0deg);
+}
+
+@mixin skew-full {
+  transform: skew(-40deg);
+  -webkit-transform: skew(-40deg);
+  -moz-transform: skew(-40deg);
+  -ms-transform: skew(-40deg);
+  -o-transform: skew(-40deg);
+}
+
+@mixin normal-skew {
+  transform: skew(40deg);
+  -webkit-transform: skew(40deg);
+  -moz-transform: skew(40deg);
+  -ms-transform: skew(40deg);
+  -o-transform: skew(40deg);
 }
 
 //--------TRANSITION MIXINS---------

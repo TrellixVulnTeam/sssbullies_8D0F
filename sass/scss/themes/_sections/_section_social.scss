@@ -1,4 +1,81 @@
 .social-section {
-  height: 50rem;
-  background-color: $color-red;
+  height: 35rem;
+
+  .social-title {
+    color: $color-lite;
+  }
+
+  .icon-wrapper {
+    width: 80%;
+    height: 15rem;
+    margin: 0 auto;
+    @include flex-center;
+    opacity: 0;
+    animation-delay: 500ms;
+
+    .icons {
+      width: 5rem;
+      height: 5rem;
+      margin: 0 1rem;
+      border: 0.1rem solid $color-lite;
+      background-color: $color-dark;
+
+      @include transit3;
+
+      @include tabletPortrait {
+        & {
+          width: 6rem;
+          height: 6rem;
+          margin: 0 1.5rem;
+        }
+      }
+
+      &:hover {
+        box-shadow: 0rem 2rem 2rem $color-red-opacity;
+        transform: translateY(-15%);
+        -webkit-transform: translateY(-15%);
+        -moz-transform: translateY(-15%);
+        -ms-transform: translateY(-15%);
+        -o-transform: translateY(-15%);
+      }
+
+      a:link,
+      a:visited {
+        position: relative;
+        text-decoration: none;
+        overflow: hidden;
+        @include keep-it-hundo;
+        @include flex-center;
+        @include transit3;
+
+        &::after {
+          content: "";
+          width: 40%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: -90%;
+          @include transit3;
+          @include skew-full;
+          background-color: $color-gray-opacity;
+          @include deep-shadow-gray;
+        }
+
+        i {
+          font-size: 4rem;
+          color: $color-lite;
+
+          @include tabletPortrait {
+            & {
+              font-size: 5rem;
+            }
+          }
+        }
+
+        &:hover::after {
+          left: 150%;
+        }
+      }
+    }
+  }
 }

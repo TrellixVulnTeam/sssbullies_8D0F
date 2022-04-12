@@ -180,6 +180,12 @@
             object-position: bottom;
           }
         }
+
+        @include largeDesktop {
+          & {
+            object-position: center;
+          }
+        }
       }
     }
   }

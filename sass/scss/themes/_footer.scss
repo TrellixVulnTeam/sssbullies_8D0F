@@ -1,22 +1,147 @@
 footer {
   width: 100%;
   height: 50rem;
-  border-top: 0.2rem solid $color-lite;
+  position: relative;
   color: $color-lite;
-  font-size: 1.15rem;
+  font-family: $secondary-font;
   @include flex-center-col;
-  justify-content: space-between;
+  justify-content: flex-end;
+  //border: 1px solid yellow;
 
-  .footer-sitemap-container {
+  @include tabletPortrait {
+    & {
+      height: 40rem;
+    }
+  }
+
+  .site-map-container {
     width: 100%;
-    height: 70%;
-    // border: 1px solid red;
+    height: 80%;
+    @include flex-center-col;
+    max-width: 120rem;
+    justify-content: space-evenly;
+    position: relative;
+    //border: 1px solid rgb(83, 180, 35);
+
+    @include tabletPortrait {
+      & {
+        flex-direction: row;
+        // align-items: flex-start;
+      }
+    }
+
+    &::before {
+      content: "";
+      width: 80%;
+      height: 1rem;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      @include transformX;
+      border-top: 0.1rem dotted $color-lite;
+    }
+
+    &::after {
+      content: "";
+      width: 80%;
+      height: 1rem;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      @include transformX;
+      border-bottom: 0.1rem dotted $color-lite;
+    }
+
+    .site-map-box {
+      width: 15rem;
+      height: auto;
+      @include flex-center-col;
+      align-items: flex-start;
+      justify-content: flex-start;
+      // border: 1px solid blue;
+
+      @include tabletPortrait {
+        & {
+          height: 15rem;
+        }
+      }
+
+      .site-map-box-title {
+        width: 100%;
+        height: auto;
+        position: relative;
+        font-size: 1.75rem;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        @include tabletPortrait {
+          & {
+            font-size: 2.5rem;
+          }
+        }
+
+        &::after {
+          content: "";
+          width: 100%;
+          height: 0.2rem;
+          position: absolute;
+          bottom: -10%;
+          left: 0;
+          background-color: $color-red;
+
+          @include tabletPortrait {
+            & {
+              width: 15rem;
+            }
+          }
+        }
+      }
+
+      .site-map-ul {
+        width: auto;
+        height: auto;
+        margin-top: 2rem;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+
+        .site-map-li {
+          list-style-type: none;
+
+          a {
+            font-size: 1.5rem;
+            text-decoration: none;
+            color: $color-lite;
+
+            @include tabletPortrait {
+              & {
+                font-size: 1.75rem;
+              }
+            }
+
+            &:hover {
+              color: $color-gray-opacity;
+            }
+          }
+        }
+      }
+    }
   }
 
   .footer-copyright {
     width: 100%;
     height: 20%;
+    font-size: 1.2rem;
     @include flex-center;
+
+    @include tabletPortrait {
+      & {
+        font-size: 1.75rem;
+      }
+    }
 
     span {
       width: 0.1rem;

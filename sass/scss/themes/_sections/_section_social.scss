@@ -1,6 +1,12 @@
 .social-section {
   height: 35rem;
 
+  @include tabletPortrait {
+    & {
+      height: 40rem;
+    }
+  }
+
   .social-title {
     color: $color-lite;
   }
@@ -8,10 +14,10 @@
   .icon-wrapper {
     width: 80%;
     height: 15rem;
-    margin: 0 auto;
+    margin: 2rem auto 0;
     @include flex-center;
     opacity: 0;
-    animation-delay: 500ms;
+    animation-delay: 300ms;
 
     .icons {
       width: 5rem;
@@ -19,7 +25,7 @@
       margin: 0 1rem;
       border: 0.1rem solid $color-lite;
       background-color: $color-dark;
-
+      @include deep-shadow-graylite;
       @include transit3;
 
       @include tabletPortrait {
@@ -31,7 +37,7 @@
       }
 
       &:hover {
-        box-shadow: 0rem 2rem 2rem $color-red-opacity;
+        box-shadow: 0rem 2rem 2rem $color-gray-opacity;
         transform: translateY(-15%);
         -webkit-transform: translateY(-15%);
         -moz-transform: translateY(-15%);

@@ -17,6 +17,13 @@
     }
   }
 
+  @include largeDesktop {
+    & {
+      height: 15rem;
+      // font-size: 3rem;
+    }
+  }
+
   .link-title {
     width: 80%;
     text-decoration: none;

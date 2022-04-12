@@ -91,7 +91,7 @@
 }
 
 @mixin deep-shadow-graylite {
-  box-shadow: 0rem 0.2rem 0.5rem $color-gray-lite;
+  box-shadow: 0.2rem 0.2rem 0.5rem $color-gray-lite;
 }
 
 @mixin shadow-red {

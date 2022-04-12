@@ -71,8 +71,8 @@ body {
       max-width: 80rem;
       height: auto;
       margin-bottom: 2rem;
-      filter: drop-shadow(0.2rem 0.2rem 0.3rem #050505ce);
-      -webkit-filter: drop-shadow(0.2rem 0.2rem 0.3rem #050505ce); }
+      filter: drop-shadow(1rem 1rem 0.5rem #000000);
+      -webkit-filter: drop-shadow(1rem 1rem 0.5rem #000000); }
       @media only screen and (min-width: 768px) {
         .hero .logo-btn-container .company-main-logo {
           width: 80%; } }
@@ -487,12 +487,26 @@ footer {
 
 .about-section {
   height: 70rem;
+  position: relative;
   background-color: #050505;
-  background-image: url(../public/images/alex-perez-ioJBsYQ-pPM-unsplash.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed; }
+  transition: 0.4s ease;
+  -webkit-transition: 0.4s ease;
+  -moz-transition: 0.4s ease;
+  -ms-transition: 0.4s ease;
+  -o-transition: 0.4s ease; }
+  .about-section::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url(../public/images/alex-perez-ioJBsYQ-pPM-unsplash.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    z-index: -1; }
   @media only screen and (min-width: 1224px) {
     .about-section {
       height: 65rem; } }
@@ -801,103 +815,123 @@ footer {
       @media only screen and (min-width: 1024px) {
         .bullies-section .bullies-wrapper .bullies-container {
           width: 75%; } }
-      .bullies-section .bullies-wrapper .bullies-container .bullies-boxes {
+      .bullies-section .bullies-wrapper .bullies-container .bullies-card {
         width: 20rem;
         height: 30rem;
         margin-top: 4rem;
-        background-color: #050505ab;
-        opacity: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column; }
+        position: relative;
+        transform-style: preserve-3d;
+        transition: 0.6s ease;
+        -webkit-transition: 0.6s ease;
+        -moz-transition: 0.6s ease;
+        -ms-transition: 0.6s ease;
+        -o-transition: 0.6s ease;
+        cursor: pointer;
+        opacity: 0; }
+        .bullies-section .bullies-wrapper .bullies-container .bullies-card:nth-of-type(1) {
+          animation-delay: 100ms; }
+        .bullies-section .bullies-wrapper .bullies-container .bullies-card:nth-of-type(2) {
+          animation-delay: 300ms; }
+        .bullies-section .bullies-wrapper .bullies-container .bullies-card:nth-of-type(3) {
+          animation-delay: 500ms; }
         @media only screen and (min-width: 768px) {
-          .bullies-section .bullies-wrapper .bullies-container .bullies-boxes {
+          .bullies-section .bullies-wrapper .bullies-container .bullies-card {
             margin-top: 0; } }
         @media only screen and (min-width: 1224px) {
-          .bullies-section .bullies-wrapper .bullies-container .bullies-boxes {
+          .bullies-section .bullies-wrapper .bullies-container .bullies-card {
             width: 25rem;
             height: 35rem; } }
-        .bullies-section .bullies-wrapper .bullies-container .bullies-boxes:nth-of-type(1) {
-          animation-delay: 100ms; }
-        .bullies-section .bullies-wrapper .bullies-container .bullies-boxes:nth-of-type(2) {
-          animation-delay: 300ms; }
-        .bullies-section .bullies-wrapper .bullies-container .bullies-boxes:nth-of-type(3) {
-          animation-delay: 500ms; }
-        .bullies-section .bullies-wrapper .bullies-container .bullies-boxes .bullies-content {
-          width: 100%; }
-        .bullies-section .bullies-wrapper .bullies-container .bullies-boxes .bullies-content-headshot {
-          height: 55%;
-          position: relative; }
-          @media only screen and (min-width: 1224px) {
-            .bullies-section .bullies-wrapper .bullies-container .bullies-boxes .bullies-content-headshot {
-              transform: scale(1.2);
-              -webkit-transform: scale(1.2);
-              -moz-transform: scale(1.2);
-              -ms-transform: scale(1.2);
-              -o-transform: scale(1.2); } }
-          .bullies-section .bullies-wrapper .bullies-container .bullies-boxes .bullies-content-headshot .headshot-box {
-            width: 13rem;
-            height: 13rem;
-            position: relative;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            -webkit-transform: translate(-50%, -50%);
-            -moz-transform: translate(-50%, -50%);
-            -ms-transform: translate(-50%, -50%);
-            -o-transform: translate(-50%, -50%);
-            top: 55%;
-            overflow: hidden;
-            border: 0.2rem solid #fff;
-            border-radius: 40rem;
-            -webkit-border-radius: 40rem;
-            -moz-border-radius: 40rem;
-            -ms-border-radius: 40rem;
-            -o-border-radius: 40rem; }
-            .bullies-section .bullies-wrapper .bullies-container .bullies-boxes .bullies-content-headshot .headshot-box::after {
-              content: "";
-              width: 100%;
-              height: 100%;
-              position: absolute;
-              top: 50%;
-              left: 50%;
-              transform: translate(-50%, -50%);
-              -webkit-transform: translate(-50%, -50%);
-              -moz-transform: translate(-50%, -50%);
-              -ms-transform: translate(-50%, -50%);
-              -o-transform: translate(-50%, -50%);
-              background-image: url(../public/images/TransparentGrimm.png);
-              background-position: -15px 5px;
-              background-size: cover;
-              background-repeat: no-repeat; }
-        .bullies-section .bullies-wrapper .bullies-container .bullies-boxes .bullies-content-info {
-          height: 45%;
-          display: flex;
-          flex-direction: column;
-          justify-content: flex-start; }
-          @media only screen and (min-width: 1224px) {
-            .bullies-section .bullies-wrapper .bullies-container .bullies-boxes .bullies-content-info {
-              margin-top: 2rem;
-              transform: scale(1.2);
-              -webkit-transform: scale(1.2);
-              -moz-transform: scale(1.2);
-              -ms-transform: scale(1.2);
-              -o-transform: scale(1.2); } }
-          .bullies-section .bullies-wrapper .bullies-container .bullies-boxes .bullies-content-info .bullies-content-info-name {
+        .bullies-section .bullies-wrapper .bullies-container .bullies-card .bullies-card-front,
+        .bullies-section .bullies-wrapper .bullies-container .bullies-card .bullies-card-back {
+          width: 100%;
+          height: 100%;
+          background-color: #050505d5;
+          backface-visibility: hidden;
+          -webkit-backface-visibility: hidden; }
+        .bullies-section .bullies-wrapper .bullies-container .bullies-card .bullies-card-front {
+          position: relative;
+          position: absolute;
+          top: 0;
+          left: 0;
+          transform: perspective(50rem) rotateY(0deg);
+          -webkit-transform: perspective(50rem) rotateY(0deg);
+          -moz-transform: perspective(50rem) rotateY(0deg);
+          -ms-transform: perspective(50rem) rotateY(0deg);
+          -o-transform: perspective(50rem) rotateY(0deg);
+          transition: 0.6s ease;
+          -webkit-transition: 0.6s ease;
+          -moz-transition: 0.6s ease;
+          -ms-transition: 0.6s ease;
+          -o-transition: 0.6s ease; }
+          .bullies-section .bullies-wrapper .bullies-container .bullies-card .bullies-card-front::after {
+            content: "";
             width: 100%;
-            margin-bottom: 1rem;
-            position: relative;
-            font-size: 3.5rem;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-image: url(../public/images/ssserpentsandbulliesfinal.png);
+            background-position: top;
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.3;
+            z-index: -1; }
+          .bullies-section .bullies-wrapper .bullies-container .bullies-card .bullies-card-front .card-front-img-box {
+            width: 100%;
+            height: 80%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            filter: drop-shadow(-0.3rem -0.5rem 0.8rem #050505);
+            -webkit-filter: drop-shadow(-0.3rem -0.5rem 0.8rem #050505); }
+            .bullies-section .bullies-wrapper .bullies-container .bullies-card .bullies-card-front .card-front-img-box .card-front-img {
+              width: 70%;
+              height: auto;
+              object-fit: contain; }
+          .bullies-section .bullies-wrapper .bullies-container .bullies-card .bullies-card-front .card-front-img-name {
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            transform: translateX(-50%);
+            -webkit-transform: translateX(-50%);
+            -moz-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
+            -o-transform: translateX(-50%);
             color: #fff;
+            font-size: 5rem; }
+        .bullies-section .bullies-wrapper .bullies-container .bullies-card .bullies-card-back {
+          position: absolute;
+          top: 0;
+          left: 0;
+          transform: perspective(60rem) rotateY(180deg);
+          -webkit-transform: perspective(60rem) rotateY(180deg);
+          -moz-transform: perspective(60rem) rotateY(180deg);
+          -ms-transform: perspective(60rem) rotateY(180deg);
+          -o-transform: perspective(60rem) rotateY(180deg);
+          transition: 0.6s ease;
+          -webkit-transition: 0.6s ease;
+          -moz-transition: 0.6s ease;
+          -ms-transition: 0.6s ease;
+          -o-transition: 0.6s ease;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          justify-content: flex-start;
+          color: #fff; }
+          .bullies-section .bullies-wrapper .bullies-container .bullies-card .bullies-card-back .card-back-title {
+            width: 100%;
+            height: 7rem;
+            margin-bottom: 2rem;
+            position: relative;
+            font-size: 3rem;
             display: flex;
             justify-content: center;
             align-items: center; }
-            .bullies-section .bullies-wrapper .bullies-container .bullies-boxes .bullies-content-info .bullies-content-info-name::after {
+            .bullies-section .bullies-wrapper .bullies-container .bullies-card .bullies-card-back .card-back-title::after {
               content: "";
-              width: 55%;
-              height: 0.2rem;
+              width: 60%;
+              height: 70%;
               position: absolute;
               top: 50%;
               left: 50%;
@@ -906,27 +940,45 @@ footer {
               -moz-transform: translate(-50%, -50%);
               -ms-transform: translate(-50%, -50%);
               -o-transform: translate(-50%, -50%);
-              top: 90%;
-              background-color: #fff; }
-          .bullies-section .bullies-wrapper .bullies-container .bullies-boxes .bullies-content-info .bullies-content-info-stats {
-            width: 100%;
+              border-bottom: 0.1rem dotted #cc0000; }
+          .bullies-section .bullies-wrapper .bullies-container .bullies-card .bullies-card-back .card-back-content {
+            width: 80%;
+            height: auto;
+            margin: 0 auto;
             display: flex;
+            flex-direction: column;
             justify-content: center;
-            align-items: center;
-            flex-direction: column; }
-            .bullies-section .bullies-wrapper .bullies-container .bullies-boxes .bullies-content-info .bullies-content-info-stats li {
-              width: 60%;
-              margin-bottom: 1rem;
-              color: #fff;
-              font-size: 1.25rem;
-              display: flex;
-              justify-content: flex-start;
-              align-items: center; }
-              .bullies-section .bullies-wrapper .bullies-container .bullies-boxes .bullies-content-info .bullies-content-info-stats li img {
-                width: 1.8rem;
-                height: 1.8rem;
-                margin-right: 1rem;
-                object-fit: contain; }
+            align-items: flex-start; }
+            .bullies-section .bullies-wrapper .bullies-container .bullies-card .bullies-card-back .card-back-content .card-back-li {
+              position: relative;
+              padding-left: 2.15rem;
+              list-style-type: none;
+              font-size: 1.5rem; }
+              .bullies-section .bullies-wrapper .bullies-container .bullies-card .bullies-card-back .card-back-content .card-back-li::before {
+                content: "";
+                width: 100%;
+                height: 80%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-image: url(../public/images/WhitePaw.png);
+                background-position: left;
+                background-size: contain;
+                background-repeat: no-repeat; }
+              .bullies-section .bullies-wrapper .bullies-container .bullies-card .bullies-card-back .card-back-content .card-back-li:not(:last-child) {
+                margin-bottom: 2rem; }
+        .bullies-section .bullies-wrapper .bullies-container .bullies-card:hover > .bullies-card-front {
+          transform: rotateY(-180deg);
+          -webkit-transform: rotateY(-180deg);
+          -moz-transform: rotateY(-180deg);
+          -ms-transform: rotateY(-180deg);
+          -o-transform: rotateY(-180deg); }
+        .bullies-section .bullies-wrapper .bullies-container .bullies-card:hover > .bullies-card-back {
+          transform: rotateY(0deg);
+          -webkit-transform: rotateY(0deg);
+          -moz-transform: rotateY(0deg);
+          -ms-transform: rotateY(0deg);
+          -o-transform: rotateY(0deg); }
 
 .gallery-section {
   height: 10rem;

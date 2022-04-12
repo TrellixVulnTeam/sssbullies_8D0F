@@ -147,7 +147,7 @@ const bgOpacityObserverFunction = function (entries) {
   const [entry] = entries;
   console.log(entry);
   if (entry.isIntersecting) {
-    entry.target.style.backgroundColor = "rgba(05,05,05,0.8";
+    entry.target.style.backgroundColor = "rgba(05,05,05,0.6";
   }
 
   // entry.target.classList.toggle("galleryAnimateUp", entry.isIntersecting);
@@ -247,8 +247,8 @@ closeModal.addEventListener("click", () => {
 
 const bulliesContainerOne = document.querySelector(".bullies-container-one");
 const bulliesContainerTwo = document.querySelector(".bullies-container-two");
-const bulliesBoxesFirst = document.querySelectorAll(".bullies-boxes-first");
-const bulliesBoxesSecond = document.querySelectorAll(".bullies-boxes-second");
+const bulliesCardFirst = document.querySelectorAll(".bullies-card-first");
+const bulliesCardSecond = document.querySelectorAll(".bullies-card-second");
 
 // Observer Callback Function One
 
@@ -257,7 +257,7 @@ const bulliesFirstObserverFunction = function (entries) {
   console.log(entry);
 
   if (entry.isIntersecting) {
-    bulliesBoxesFirst.forEach((b1) => {
+    bulliesCardFirst.forEach((b1) => {
       b1.classList.toggle("galleryAnimateUp");
     });
   }
@@ -274,7 +274,7 @@ const bulliesSecondObserverFunction = function (entries) {
   console.log(entry);
 
   if (entry.isIntersecting) {
-    bulliesBoxesSecond.forEach((b2) => {
+    bulliesCardSecond.forEach((b2) => {
       b2.classList.toggle("galleryAnimateUp");
     });
   }

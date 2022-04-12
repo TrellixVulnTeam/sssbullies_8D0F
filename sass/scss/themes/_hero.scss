@@ -27,9 +27,8 @@
       max-width: 80rem;
       height: auto;
       margin-bottom: 2rem;
-      filter: drop-shadow(0.2rem 0.2rem 0.3rem #050505ce);
-      -webkit-filter: drop-shadow(0.2rem 0.2rem 0.3rem #050505ce);
-
+      filter: drop-shadow(1rem 1rem 0.5rem #000000);
+      -webkit-filter: drop-shadow(1rem 1rem 0.5rem #000000);
       @include tabletPortrait {
         & {
           width: 80%;

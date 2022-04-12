@@ -190,3 +190,27 @@
   -ms-transition: 2s ease;
   -o-transition: 2s ease;
 }
+
+@mixin perspective {
+  transform: perspective(50rem) rotateY(0deg);
+  -webkit-transform: perspective(50rem) rotateY(0deg);
+  -moz-transform: perspective(50rem) rotateY(0deg);
+  -ms-transform: perspective(50rem) rotateY(0deg);
+  -o-transform: perspective(50rem) rotateY(0deg);
+}
+
+@mixin perspectivePlus {
+  transform: perspective(60rem) rotateY(180deg);
+  -webkit-transform: perspective(60rem) rotateY(180deg);
+  -moz-transform: perspective(60rem) rotateY(180deg);
+  -ms-transform: perspective(60rem) rotateY(180deg);
+  -o-transform: perspective(60rem) rotateY(180deg);
+}
+
+@mixin perspectiveNegative {
+  transform: perspective(60rem) rotateY(-180deg);
+  -webkit-transform: perspective(60rem) rotateY(-180deg);
+  -moz-transform: perspective(60rem) rotateY(-180deg);
+  -ms-transform: perspective(60rem) rotateY(-180deg);
+  -o-transform: perspective(60rem) rotateY(-180deg);
+}

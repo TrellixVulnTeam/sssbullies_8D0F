@@ -942,13 +942,16 @@ footer {
               -o-transform: translate(-50%, -50%);
               border-bottom: 0.1rem dotted #cc0000; }
           .bullies-section .bullies-wrapper .bullies-container .bullies-card .bullies-card-back .card-back-content {
-            width: 80%;
+            width: 85%;
             height: auto;
             margin: 0 auto;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: flex-start; }
+            @media only screen and (min-width: 1224px) {
+              .bullies-section .bullies-wrapper .bullies-container .bullies-card .bullies-card-back .card-back-content {
+                width: 80%; } }
             .bullies-section .bullies-wrapper .bullies-container .bullies-card .bullies-card-back .card-back-content .card-back-li {
               position: relative;
               padding-left: 2.15rem;

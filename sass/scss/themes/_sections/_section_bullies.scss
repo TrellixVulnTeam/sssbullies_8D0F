@@ -15,6 +15,17 @@
     }
   }
 
+  .bullies-section-vid {
+    @include keep-it-hundo;
+    position: absolute;
+    position: fixed;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    object-position: bottom center;
+    z-index: -2;
+  }
+
   &::before {
     content: "";
     @include keep-it-hundo;
@@ -29,17 +40,17 @@
     z-index: -1;
   }
 
-  &::after {
-    content: "";
-    @include keep-it-hundo;
-    @include absol-topLeftZero;
-    background-image: url(../public/images/bangsal-nam-9HMGyZJfrk8-unsplash.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    z-index: -2;
-  }
+  // &::after {
+  //   content: "";
+  //   @include keep-it-hundo;
+  //   @include absol-topLeftZero;
+  //   background-image: url(../public/images/bangsal-nam-9HMGyZJfrk8-unsplash.jpg);
+  //   background-position: center;
+  //   background-repeat: no-repeat;
+  //   background-size: cover;
+  //   background-attachment: fixed;
+  //   z-index: -2;
+  // }
 
   .bullies-wrapper {
     width: 100%;

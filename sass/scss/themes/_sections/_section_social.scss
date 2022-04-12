@@ -1,5 +1,6 @@
 .social-section {
   height: 35rem;
+  background-color: $color-dark;
 
   @include tabletPortrait {
     & {

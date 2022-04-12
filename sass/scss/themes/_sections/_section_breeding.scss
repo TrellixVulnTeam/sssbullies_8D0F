@@ -1,5 +1,6 @@
 .breeding-section {
   height: 75rem;
+  background-color: $color-dark;
 
   @include tabletPortrait {
     & {

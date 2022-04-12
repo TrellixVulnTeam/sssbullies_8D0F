@@ -4,6 +4,10 @@
   font-family: "Bahnschrift";
   src: url(../public/fonts/bahnschrift.ttf); }
 
+@font-face {
+  font-family: "RingBearer";
+  src: url(../public/fonts/RingBearer.TTF); }
+
 *,
 *::before,
 *::after {
@@ -897,8 +901,10 @@ footer {
             -moz-transform: translateX(-50%);
             -ms-transform: translateX(-50%);
             -o-transform: translateX(-50%);
+            font-family: "RingBearer", sans-serif;
             color: #fff;
-            font-size: 5rem; }
+            font-size: 5rem;
+            text-shadow: -0.5rem -0.5rem 0.8rem #050505; }
         .bullies-section .bullies-wrapper .bullies-container .bullies-card .bullies-card-back {
           position: absolute;
           top: 0;

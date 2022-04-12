@@ -193,8 +193,10 @@
             top: 72%;
             left: 50%;
             @include transformX;
+            font-family: $quaternary-font;
             color: $color-lite;
             font-size: 5rem;
+            text-shadow: -0.5rem -0.5rem 0.8rem $color-dark;
           }
         }
 

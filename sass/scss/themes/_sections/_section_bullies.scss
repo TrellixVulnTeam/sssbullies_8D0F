@@ -15,17 +15,6 @@
     }
   }
 
-  .bullies-section-vid {
-    @include keep-it-hundo;
-    position: absolute;
-    position: fixed;
-    top: 0;
-    left: 0;
-    object-fit: cover;
-    object-position: bottom center;
-    z-index: -2;
-  }
-
   &::before {
     content: "";
     @include keep-it-hundo;
@@ -38,6 +27,17 @@
     filter: drop-shadow(0.3rem 0.3rem 0.3rem #050505db);
     -webkit-filter: drop-shadow(0.3rem 0.3rem 0.3rem #050505db);
     z-index: -1;
+  }
+
+  .bullies-section-vid {
+    @include keep-it-hundo;
+    position: absolute;
+    position: fixed;
+    // position: sticky;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    z-index: -2;
   }
 
   // &::after {
@@ -58,7 +58,6 @@
     height: calc(100% - 10rem);
     margin: 0 auto;
     @include flex-center-col;
-    // border: 1px solid blue;
 
     @include tabletPortrait {
       & {

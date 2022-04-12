@@ -116,6 +116,7 @@ footer {
             font-size: 1.5rem;
             text-decoration: none;
             color: $color-lite;
+            @include transit3;
 
             @include tabletPortrait {
               & {

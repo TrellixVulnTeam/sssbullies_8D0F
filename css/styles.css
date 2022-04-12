@@ -871,10 +871,10 @@ footer {
             top: 0;
             left: 0;
             background-image: url(../public/images/ssserpentsandbulliesfinal.png);
-            background-position: top;
+            background-position: 0px 30px;
             background-size: contain;
             background-repeat: no-repeat;
-            opacity: 0.3;
+            opacity: 0.7;
             z-index: -1; }
           .bullies-section .bullies-wrapper .bullies-container .bullies-card .bullies-card-front .card-front-img-box {
             width: 100%;
@@ -890,7 +890,7 @@ footer {
               object-fit: contain; }
           .bullies-section .bullies-wrapper .bullies-container .bullies-card .bullies-card-front .card-front-img-name {
             position: absolute;
-            top: 70%;
+            top: 72%;
             left: 50%;
             transform: translateX(-50%);
             -webkit-transform: translateX(-50%);

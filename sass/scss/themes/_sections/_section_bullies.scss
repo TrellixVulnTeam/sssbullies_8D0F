@@ -40,18 +40,6 @@
     z-index: -2;
   }
 
-  // &::after {
-  //   content: "";
-  //   @include keep-it-hundo;
-  //   @include absol-topLeftZero;
-  //   background-image: url(../public/images/bangsal-nam-9HMGyZJfrk8-unsplash.jpg);
-  //   background-position: center;
-  //   background-repeat: no-repeat;
-  //   background-size: cover;
-  //   background-attachment: fixed;
-  //   z-index: -2;
-  // }
-
   .bullies-wrapper {
     width: 100%;
     max-width: 120rem;
@@ -117,6 +105,7 @@
         position: relative;
         transform-style: preserve-3d;
         @include transit6;
+
         cursor: pointer;
         opacity: 0;
 
@@ -148,9 +137,10 @@
         .bullies-card-front,
         .bullies-card-back {
           @include keep-it-hundo;
-          background-color: #050505d5;
+          background-color: #050505bc;
           backface-visibility: hidden;
           -webkit-backface-visibility: hidden;
+          @include shadow;
         }
 
         .bullies-card-front {
@@ -161,8 +151,9 @@
 
           &::after {
             content: "";
-            @include keep-it-hundo;
-            @include absol-topLeftZero;
+            width: 90%;
+            height: 90%;
+            @include absol-center;
             background-image: url(../public/images/ssserpentsandbulliesfinal.png);
             background-position: 0px 20px;
             background-size: contain;
@@ -172,9 +163,9 @@
           }
 
           .card-front-img-box {
-            width: 100%;
+            width: 90%;
             height: 80%;
-
+            margin: 0 auto;
             display: flex;
             justify-content: center;
             align-items: flex-end;
@@ -195,8 +186,14 @@
             @include transformX;
             font-family: $quaternary-font;
             color: $color-lite;
-            font-size: 5rem;
+            font-size: 4rem;
             text-shadow: -0.5rem -0.5rem 0.8rem $color-dark;
+
+            @include desktop {
+              & {
+                font-size: 5rem;
+              }
+            }
           }
         }
 

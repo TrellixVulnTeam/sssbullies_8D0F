@@ -11,6 +11,13 @@ const meat = document.getElementById("meat");
 const bottomBun = document.getElementById("bottom");
 const navLinks = document.querySelectorAll(".nav-li");
 
+const changeBurgerStyle = function () {
+  topBun.style.width = "100%";
+  bottomBun.style.width = "100%";
+  topBun.style.backgroundColor = "#fff";
+  bottomBun.style.backgroundColor = "#fff";
+};
+
 cheese.addEventListener("click", () => {
   navMenu.classList.toggle("showNav");
   topBun.classList.toggle("topChange");
@@ -23,14 +30,11 @@ cheese.addEventListener("click", () => {
     topBun.style.backgroundColor = "rgb(204,4,4)";
     bottomBun.style.backgroundColor = "rgb(204,4,4)";
   } else {
-    topBun.style.width = "100%";
-    bottomBun.style.width = "100%";
-    topBun.style.backgroundColor = "#fff";
-    bottomBun.style.backgroundColor = "#fff";
+    changeBurgerStyle();
   }
 });
 
-// Close Nav Links After Click
+// ********** Close Nav Links After Click ********** //
 
 navLinks.forEach((l) => {
   l.addEventListener("click", () => {
@@ -38,14 +42,11 @@ navLinks.forEach((l) => {
     topBun.classList.remove("topChange");
     meat.classList.remove("meatGone");
     bottomBun.classList.remove("bottomChange");
-    topBun.style.width = "100%";
-    bottomBun.style.width = "100%";
-    topBun.style.backgroundColor = "#fff";
-    bottomBun.style.backgroundColor = "#fff";
+    changeBurgerStyle();
   });
 });
 
-// Nav BG changes after scroll
+// ********** Nav BG changes after scroll ********** //
 
 const mediaQueryLandscape = window.matchMedia("(min-width: 1200px)");
 
@@ -63,28 +64,25 @@ window.addEventListener("scroll", () => {
   }
 });
 
-// ********** IntersectionObserver for Section Titles ********** //
+// ********** Observer for Move-Up Class Elements ********** //
 
-const sectionTitles = document.querySelectorAll(".section-titles");
+const contentsMoveUp = document.querySelectorAll(".move-up");
 
 // Observer Callback Function
 
-const titleObserverFunction = function (entries) {
+const contentsObserverFunction = function (entries) {
   const [entry] = entries;
-  console.log(entry);
-
-  // entry.target.classList.toggle("galleryAnimateUp", entry.isIntersecting);
 
   entry.target.classList.toggle("galleryAnimateUp", entry.isIntersecting);
 
   // Stop Observer after Intersecting
 
-  if (entry.isIntersecting) sectionTitlesObserver.unobserve(entry.target);
+  if (entry.isIntersecting) moveUpObserver.unobserve(entry.target);
 };
 
 // Observer Options
 
-const titleObserverOptions = {
+const contentsObserverOptions = {
   root: null,
   threshold: 0,
   rootMargin: "-50px",
@@ -92,132 +90,18 @@ const titleObserverOptions = {
 
 // Actual Observer
 
-const sectionTitlesObserver = new IntersectionObserver(
-  titleObserverFunction,
-  titleObserverOptions
+const moveUpObserver = new IntersectionObserver(
+  contentsObserverFunction,
+  contentsObserverOptions
 );
 
-sectionTitles.forEach((s) => {
-  sectionTitlesObserver.observe(s);
+// Observer Watch
+
+contentsMoveUp.forEach((cm) => {
+  moveUpObserver.observe(cm);
 });
 
-// ********** IntersectionObserver for About Content ********** //
-
-const aboutContent = document.querySelectorAll(".about-content");
-
-// Observer Callback Function
-
-const aboutContentFunction = function (entries) {
-  const [entry] = entries;
-  console.log(entry);
-
-  entry.target.classList.toggle("galleryAnimateUp", entry.isIntersecting);
-
-  // Stop Observer after Intersecting
-
-  if (entry.isIntersecting) aboutContentObserver.unobserve(entry.target);
-};
-
-// Observer Options
-
-const aboutContentObserverOptions = {
-  root: null,
-  threshold: 0,
-  rootMargin: "-100px",
-};
-
-// Actual Observer
-
-const aboutContentObserver = new IntersectionObserver(
-  aboutContentFunction,
-  aboutContentObserverOptions
-);
-
-aboutContent.forEach((ab) => {
-  aboutContentObserver.observe(ab);
-});
-
-// ********** IntersectionObserver for BG Opacity sections ********** //
-
-const bgOpacitySections = document.querySelectorAll(".bg-opacity-sections");
-
-// Observer Callback Function
-
-const bgOpacityObserverFunction = function (entries) {
-  const [entry] = entries;
-  console.log(entry);
-  if (entry.isIntersecting) {
-    entry.target.style.backgroundColor = "rgba(05,05,05,0.6";
-  }
-
-  // entry.target.classList.toggle("galleryAnimateUp", entry.isIntersecting);
-
-  // Stop Observer after Intersecting
-
-  if (entry.isIntersecting) bgOpacityObserver.unobserve(entry.target);
-};
-
-// Observer Options
-
-const bgOpacityObserverOptions = {
-  root: null,
-  threshold: 0,
-  rootMargin: "-100px",
-};
-
-// Actual Observer
-
-const bgOpacityObserver = new IntersectionObserver(
-  bgOpacityObserverFunction,
-  bgOpacityObserverOptions
-);
-
-bgOpacitySections.forEach((bg) => {
-  bgOpacityObserver.observe(bg);
-});
-
-// ********** IntersectionObserver for Breedings Section ********** //
-
-const posterContainer = document.querySelector(".poster-container");
-const posterBoxes = document.querySelectorAll(".poster-boxes");
-
-// Observer Callback Function
-
-const breedingObserverFunction = function (entries) {
-  const [entry] = entries;
-  console.log(entry);
-
-  if (entry.isIntersecting) {
-    posterBoxes.forEach((pb) => {
-      pb.classList.toggle("galleryAnimateUp");
-    });
-  }
-
-  // entry.target.classList.toggle("galleryAnimateUp", entry.isIntersecting);
-
-  // Stop Observer after Intersecting
-
-  if (entry.isIntersecting) breedingObserver.unobserve(entry.target);
-};
-
-// Observer Options
-
-const breedingObserverOptions = {
-  root: null,
-  threshold: 0,
-  rootMargin: "-100px",
-};
-
-// Actual Observer
-
-const breedingObserver = new IntersectionObserver(
-  breedingObserverFunction,
-  breedingObserverOptions
-);
-
-breedingObserver.observe(posterContainer);
-
-// ********** Breedings Modal ********** //
+// ********** Modal Function for Featured Breeding Section ********** //
 
 const modalContainer = document.querySelector(".modal-container");
 const posterBoxImgs = document.querySelectorAll(".poster-boxes-img");
@@ -243,68 +127,82 @@ closeModal.addEventListener("click", () => {
   closeModal.style.display = "none";
 });
 
-// ********** IntersectionObserver for Bullies Section ********** //
+// ********** Observer for Multiple Sections ********** //
 
-const bulliesContainerOne = document.querySelector(".bullies-container-one");
-const bulliesContainerTwo = document.querySelector(".bullies-container-two");
+const posterContainer = document.querySelector(".poster-container");
+const posterBoxes = document.querySelectorAll(".poster-boxes");
+const containerControl = document.querySelectorAll(".container-control");
 const bulliesCardFirst = document.querySelectorAll(".bullies-card-first");
 const bulliesCardSecond = document.querySelectorAll(".bullies-card-second");
 
-// Observer Callback Function One
+// Observer Callback Function
 
-const bulliesFirstObserverFunction = function (entries) {
+const containerControlFunction = function (entries) {
   const [entry] = entries;
-  console.log(entry);
+  // console.log(entry.target.classList);
 
-  if (entry.isIntersecting) {
+  // Observer for Featured Breeding Section
+
+  if (
+    entry.isIntersecting &&
+    entry.target.classList.contains("poster-container")
+  ) {
+    posterBoxes.forEach((pb) => {
+      pb.classList.toggle("galleryAnimateUp");
+    });
+  }
+
+  // Observer for Featured Featured Bullies Section
+
+  if (
+    entry.isIntersecting &&
+    entry.target.classList.contains("bullies-container-one")
+  ) {
     bulliesCardFirst.forEach((b1) => {
       b1.classList.toggle("galleryAnimateUp");
     });
   }
 
-  // Stop Observer after Intersecting
-
-  if (entry.isIntersecting) bulliesOneObserver.unobserve(entry.target);
-};
-
-// Observer Callback Function Two
-
-const bulliesSecondObserverFunction = function (entries) {
-  const [entry] = entries;
-  console.log(entry);
-
-  if (entry.isIntersecting) {
-    bulliesCardSecond.forEach((b2) => {
-      b2.classList.toggle("galleryAnimateUp");
+  if (
+    entry.isIntersecting &&
+    entry.target.classList.contains("bullies-container-two")
+  ) {
+    bulliesCardSecond.forEach((b1) => {
+      b1.classList.toggle("galleryAnimateUp");
     });
   }
 
-  // Stop Observer after Intersecting
+  // Observer for Sections with BG Opacity Animations
 
-  if (entry.isIntersecting) bulliesTwoObserver.unobserve(entry.target);
+  if (
+    entry.isIntersecting &&
+    entry.target.classList.contains("bg-opacity-sections")
+  ) {
+    entry.target.style.backgroundColor = "rgba(05,05,05,0.6)";
+  }
+
+  // UnObserve Entries after Intersection
+
+  if (entry.isIntersecting) containerControlObserver.unobserve(entry.target);
 };
 
 // Observer Options
 
-const bulliesObserverOptions = {
+const containerControlOptions = {
   root: null,
   threshold: 0,
-  rootMargin: "-150px",
+  rootMargin: "-120px",
 };
 
-// Actual Observers
+// Observer
 
-const bulliesOneObserver = new IntersectionObserver(
-  bulliesFirstObserverFunction,
-  bulliesObserverOptions
+const containerControlObserver = new IntersectionObserver(
+  containerControlFunction,
+  containerControlOptions
 );
 
-const bulliesTwoObserver = new IntersectionObserver(
-  bulliesSecondObserverFunction,
-  bulliesObserverOptions
-);
+// Observer Watch
 
-// Call/Watch Observers
-
-bulliesOneObserver.observe(bulliesContainerOne);
-bulliesTwoObserver.observe(bulliesContainerTwo);
+containerControl.forEach((cc) => {
+  containerControlObserver.observe(cc);
+});

@@ -55,7 +55,7 @@
       text-indent: 2.5rem;
       opacity: 0;
       @include text-shadowdeep;
-      @include transit6;
+      @include transit4;
 
       @include tabletPortrait {
         & {
@@ -76,6 +76,10 @@
           font-size: 2.5rem;
         }
       }
+    }
+
+    .btn-box-about {
+      opacity: 0;
     }
   }
 }

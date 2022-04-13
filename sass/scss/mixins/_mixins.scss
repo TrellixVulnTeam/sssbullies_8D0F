@@ -79,7 +79,11 @@
 //----------SHADOW MIXINS-----------
 
 @mixin shadow {
-  box-shadow: 0.2rem 0.2rem 0.4rem $color-dark;
+  box-shadow: 0.3rem 0.3rem 0.5rem $color-dark;
+}
+
+@mixin shadow-blend-dark {
+  box-shadow: 0.3rem 0.3rem 0.5rem #050505c0;
 }
 
 @mixin deep-shadow {
